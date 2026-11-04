@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "manim-pics"
+version = "0.3.0"
+description = "Advanced image processing, cinematic effects, transitions, and motion graphics for Manim Community"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "manim>=0.18",
+    "Pillow>=10.0",
+    "numpy>=1.24",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["manim_pics*"]
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "build>=1.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.package-data]
+manim_pics = ["py.typed"]
